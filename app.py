@@ -1,9 +1,16 @@
+import os
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+os.environ["OPENBLAS_NUM_THREADS"] = "1"
+os.environ["VECLIB_MAXIMUM_THREADS"] = "1"
+os.environ["NUMEXPR_NUM_THREADS"] = "1"
+
 import io
 import re
-import os
 import fitz  # PyMuPDF para conversión acelerada de PDF a imágenes
 import cv2
 import torch
+torch.set_num_threads(1)
 import easyocr
 import numpy as np
 import pandas as pd
